@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 if (container) {
-    for (let i = 1; i < 2000; i++) {
+    for (let i = 1; i < 1500; i++) {
         const shape = document.createElement("span");
         container.appendChild(shape);
     }
