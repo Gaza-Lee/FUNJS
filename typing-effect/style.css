@@ -1,0 +1,1 @@
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:monospace;text-align:center;background:#1e1e1e;color:#0f0;padding:40px}h1{margin-bottom:20px}p{font-size:24px}#text::after{content:"|";animation:blink 1s step-end infinite}@keyframes blink{50%{opacity:0}}
