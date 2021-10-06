@@ -1,0 +1,9 @@
+.app { max-width: 420px; margin: 40px auto; font-family: sans-serif; }
+h1 { text-align: center; }
+form { display: flex; gap: 8px; margin-bottom: 12px; }
+input { flex: 1; padding: 8px; }
+button { padding: 8px 12px; cursor: pointer; }
+ul { list-style: none; padding: 0; }
+li { display: flex; justify-content: space-between; padding: 8px; border-bottom: 1px solid #ddd; }
+li.done span { text-decoration: line-through; color: #888; }
+li span { cursor: pointer; }
