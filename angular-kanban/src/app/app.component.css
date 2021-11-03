@@ -1,0 +1,9 @@
+.board { font-family: sans-serif; max-width: 900px; margin: 20px auto; }
+h1 { text-align: center; }
+.add { display: flex; gap: 8px; justify-content: center; margin-bottom: 16px; }
+.add input { padding: 8px; }
+.cols { display: flex; gap: 12px; }
+.col { flex: 1; background: #f4f4f4; border-radius: 8px; padding: 10px; min-height: 300px; }
+.col h2 { margin: 0 0 8px; }
+.card { background: #fff; padding: 8px; margin-bottom: 8px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.actions button { margin-left: 4px; cursor: pointer; }

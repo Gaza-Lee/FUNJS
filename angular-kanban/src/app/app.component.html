@@ -1,0 +1,23 @@
+<div class="board">
+  <h1>Kanban (Angular)</h1>
+  <div class="add">
+    <input [(ngModel)]="newText" placeholder="new card" />
+    <select [(ngModel)]="targetCol">
+      <option *ngFor="let c of columns; let i = index" [value]="i">{{ c.name }}</option>
+    </select>
+    <button (click)="addCard()">Add</button>
+  </div>
+  <div class="cols">
+    <div class="col" *ngFor="let c of columns; let ci = index">
+      <h2>{{ c.name }}</h2>
+      <div class="card" *ngFor="let card of c.cards">
+        <span>{{ card.text }}</span>
+        <div class="actions">
+          <button *ngIf="ci>0" (click)="move(card, ci, ci-1)"><</button>
+          <button *ngIf="ci<columns.length-1" (click)="move(card, ci, ci+1)">></button>
+          <button (click)="remove(card, ci)">x</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
