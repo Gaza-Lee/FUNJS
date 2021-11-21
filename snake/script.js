@@ -9,6 +9,8 @@ let dir = { x: 1, y: 0 };
 let nextDir = { x: 1, y: 0 };
 let food = { x: 5, y: 5 };
 let score = 0;
+let highScore = parseInt(localStorage.getItem("snakeHigh") || "0", 10);
+let saved = false;
 let alive = true;
 
 function placeFood() {
@@ -46,6 +48,7 @@ function draw() {
         ctx.font = "24px sans-serif";
         ctx.textAlign = "center";
         ctx.fillText("Game Over", canvas.width / 2, canvas.height / 2);
+        if (!saved) { if (score > highScore) { highScore = score; localStorage.setItem("snakeHigh", highScore); document.getElementById("high").textContent = highScore; } saved = true; }
     }
 }
 
@@ -58,3 +61,5 @@ document.addEventListener("keydown", e => {
 
 setInterval(() => { update(); draw(); }, 120);
 draw();
+
+document.getElementById("high").textContent = highScore;
