@@ -13,14 +13,12 @@ function update(){
     const p=pipes[i]; p.x-=2;
     if(!p.passed && p.x+30<bird.x){p.passed=true;score++;document.getElementById("score").textContent=score;}
     if(p.x+30<0) pipes.splice(i,1);
-    // collision
     if(bird.x+bird.r>p.x && bird.x-bird.r<p.x+30 && (bird.y-bird.r<p.gapY || bird.y+bird.r>p.gapY+p.gap)){alive=false;}
   }
   frame++;
 }
 function draw(){
   ctx.fillStyle="#70c5ce";ctx.fillRect(0,0,canvas.width,canvas.height);
-  // ground
   ctx.fillStyle="#ded895";ctx.fillRect(0,canvas.height-40,canvas.width,40);
   ctx.fillStyle="#228B22";
   pipes.forEach(p=>{ctx.fillRect(p.x,0,30,p.gapY);ctx.fillRect(p.x,p.gapY+p.gap,30,canvas.height);});

@@ -19,9 +19,7 @@ function update(){
   if(bx>canvas.width-20 && by>cy && by<cy+paddleH){ vx=-Math.abs(vx)-0.2; }
   if(bx<0){ cs++; reset(); }
   if(bx>canvas.width){ ps++; reset(); }
-  // cpu
   if(cy+40 < by) cy+=3; else if(cy+40>by) cy-=3;
-  // player follow mouse handled below
 }
 function reset(){ bx=canvas.width/2; by=canvas.height/2; vx=(Math.random()>0.5?4:-4); vy=3; document.getElementById("p").textContent=ps; document.getElementById("c").textContent=cs; }
 canvas.addEventListener("mousemove",e=>{ const r=canvas.getBoundingClientRect(); py=e.clientY-r.top-paddleH/2; if(py<0)py=0; if(py>canvas.height-paddleH)py=canvas.height-paddleH; });

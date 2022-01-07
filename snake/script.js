@@ -63,4 +63,3 @@ setInterval(() => { update(); draw(); }, 120);
 draw();
 
 document.getElementById("high").textContent = highScore;
-// final check

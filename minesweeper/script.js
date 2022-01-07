@@ -3,10 +3,8 @@ const size=10,mines=10;
 let grid=[],revealed=0,total=size*size-mines;
 function init(){
   grid=Array.from({length:size},()=>Array(size).fill(0));
-  // place mines
   let placed=0;
   while(placed<mines){const r=Math.floor(Math.random()*size),c=Math.floor(Math.random()*size);if(grid[r][c]!=="M"){grid[r][c]="M";placed++;}}
-  // numbers
   for(let r=0;r<size;r++)for(let c=0;c<size;c++){
     if(grid[r][c]==="M")continue;
     let n=0;
@@ -27,7 +25,6 @@ function reveal(r,c,cell){
   cell.classList.add("revealed");revealed++;
   if(grid[r][c]>0){cell.textContent=grid[r][c];}
   else{
-    // flood
     for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){
       const nr=r+dr,nc=c+dc;
       if(nr>=0&&nr<size&&nc>=0&&nc<size){

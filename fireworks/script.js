@@ -20,5 +20,4 @@ function update(){
   ctx.globalAlpha=1;
 }
 setInterval(update,16);
-// auto
 setInterval(()=>boom(Math.random()*canvas.width,Math.random()*canvas.height/2),1200);
