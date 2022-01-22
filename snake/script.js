@@ -11,6 +11,7 @@ let food = { x: 5, y: 5 };
 let score = 0;
 let highScore = parseInt(localStorage.getItem("snakeHigh") || "0", 10);
 let saved = false;
+let paused = false;
 let alive = true;
 
 function placeFood() {
@@ -20,6 +21,7 @@ function placeFood() {
 
 function update() {
     if (!alive) return;
+    if (paused) return;
     dir = nextDir;
     const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
     if (head.x < 0 || head.y < 0 || head.x >= cols || head.y >= rows) { alive = false; return; }
@@ -41,6 +43,14 @@ function draw() {
     ctx.fillRect(food.x * size, food.y * size, size, size);
     ctx.fillStyle = "#2ecc71";
     snake.forEach(s => ctx.fillRect(s.x * size + 1, s.y * size + 1, size - 2, size - 2));
+    if (paused) {
+        ctx.fillStyle = "rgba(0,0,0,0.5)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#fff";
+        ctx.font = "24px sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText("Paused", canvas.width / 2, canvas.height / 2);
+    }
     if (!alive) {
         ctx.fillStyle = "rgba(0,0,0,0.6)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -57,6 +67,7 @@ document.addEventListener("keydown", e => {
     else if (e.key === "ArrowDown" && dir.y === 0) nextDir = { x: 0, y: 1 };
     else if (e.key === "ArrowLeft" && dir.x === 0) nextDir = { x: -1, y: 0 };
     else if (e.key === "ArrowRight" && dir.x === 0) nextDir = { x: 1, y: 0 };
+    else if (e.key === "p" || e.key === "P") paused = !paused;
 });
 
 setInterval(() => { update(); draw(); }, 120);
