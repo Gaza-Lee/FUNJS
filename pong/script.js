@@ -21,7 +21,7 @@ function update(){
   if(bx>canvas.width){ ps++; reset(); }
   if(cy+40 < by) cy+=3; else if(cy+40>by) cy-=3;
 }
-function reset(){ bx=canvas.width/2; by=canvas.height/2; vx=(Math.random()>0.5?4:-4); vy=3; document.getElementById("p").textContent=ps; document.getElementById("c").textContent=cs; }
+function reset(){ if(ps>=5||cs>=5){ alert((ps>=5?"Player":"CPU")+" wins!"); ps=0; cs=0; } bx=canvas.width/2; by=canvas.height/2; vx=(Math.random()>0.5?4:-4); vy=3; document.getElementById("p").textContent=ps; document.getElementById("c").textContent=cs; }
 canvas.addEventListener("mousemove",e=>{ const r=canvas.getBoundingClientRect(); py=e.clientY-r.top-paddleH/2; if(py<0)py=0; if(py>canvas.height-paddleH)py=canvas.height-paddleH; });
 setInterval(()=>{ update(); draw(); },1000/60);
 draw();
