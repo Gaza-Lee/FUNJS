@@ -2,6 +2,7 @@ const canvas=document.getElementById("game"),ctx=canvas.getContext("2d");
 const bird={x:50,y:150,r:12,vy:0};
 const gravity=0.5,jump=-8;
 const pipes=[];let frame=0,score=0,alive=true;
+let best=parseInt(localStorage.getItem("flappyBest")||"0",10);
 function addPipe(){pipes.push({x:canvas.width,gapY:100+Math.random()*200,gap:120,passed:false});}
 function reset(){bird.y=150;bird.vy=0;pipes.length=0;frame=0;score=0;alive=true;document.getElementById("score").textContent=0;}
 function update(){
@@ -11,7 +12,7 @@ function update(){
   if(frame%90===0) addPipe();
   for(let i=pipes.length-1;i>=0;i--){
     const p=pipes[i]; p.x-=2;
-    if(!p.passed && p.x+30<bird.x){p.passed=true;score++;document.getElementById("score").textContent=score;}
+    if(!p.passed && p.x+30<bird.x){p.passed=true;score++;document.getElementById("score").textContent=score;if(score>best){best=score;localStorage.setItem("flappyBest",best);document.getElementById("best").textContent=best;}}
     if(p.x+30<0) pipes.splice(i,1);
     if(bird.x+bird.r>p.x && bird.x-bird.r<p.x+30 && (bird.y-bird.r<p.gapY || bird.y+bird.r>p.gapY+p.gap)){alive=false;}
   }
@@ -29,3 +30,5 @@ canvas.addEventListener("click",()=>{if(alive)bird.vy=jump;else reset();});
 document.addEventListener("keydown",e=>{if(e.code==="Space"){if(alive)bird.vy=jump;else reset();}});
 setInterval(()=>{update();draw();},1000/60);
 draw();
+
+document.getElementById("best").textContent=best;
