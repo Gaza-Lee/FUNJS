@@ -15,3 +15,10 @@ layout.forEach(k=>{
   };
   keys.appendChild(b);
 });
+
+document.addEventListener("keydown", e => {
+  if ("0123456789+-*/.".includes(e.key)) { expr += e.key; update(); }
+  else if (e.key === "Enter") { try { expr = String(eval(expr)); } catch { expr = "Err"; } update(); }
+  else if (e.key === "Backspace") { expr = expr.slice(0, -1); update(); }
+  else if (e.key === "Escape") { expr = ""; update(); }
+});
