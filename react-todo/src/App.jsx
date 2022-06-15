@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(() => JSON.parse(localStorage.getItem("reactTodo") || "[]"));
   const [text, setText] = useState("");
+  useEffect(() => { localStorage.setItem("reactTodo", JSON.stringify(items)); }, [items]);
 
   function add(e) {
     e.preventDefault();
