@@ -70,7 +70,7 @@ document.addEventListener("keydown", e => {
     else if (e.key === "p" || e.key === "P") paused = !paused;
 });
 
-setInterval(() => { update(); draw(); }, 120);
+setInterval(() => { update(); draw(); }, 100);
 draw();
 
 document.getElementById("high").textContent = highScore;
