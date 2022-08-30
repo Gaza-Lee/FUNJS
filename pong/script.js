@@ -1,6 +1,6 @@
 const canvas=document.getElementById("game");
 const ctx=canvas.getContext("2d");
-const paddleH=80,paddleW=10;
+const paddleH=90,paddleW=10;
 let py=canvas.height/2-paddleH/2, cy=py;
 let bx=canvas.width/2, by=canvas.height/2, vx=4.5, vy=3.5;
 let ps=0, cs=0;
