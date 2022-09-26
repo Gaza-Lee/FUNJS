@@ -2,7 +2,7 @@ const canvas=document.getElementById("game"),ctx=canvas.getContext("2d");
 const brickRows=5,brickCols=8,brickW=50,brickH=20,brickPad=8,brickTop=30,brickLeft=25;
 let bricks=[];
 for(let r=0;r<brickRows;r++){bricks[r]=[];for(let c=0;c<brickCols;c++)bricks[r][c]={x:0,y:0,status:1};}
-const paddle={w:75,h:10,x:canvas.width/2-37.5};
+const paddle={w:85,h:10,x:canvas.width/2-42.5};
 const ball={x:canvas.width/2,y:canvas.height-30,r:8,dx:3.5,dy:-3.5};
 let score=0;
 function drawBricks(){
