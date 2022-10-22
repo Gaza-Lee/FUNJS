@@ -3,7 +3,7 @@ const bird={x:50,y:150,r:12,vy:0};
 const gravity=0.45,jump=-8.5;
 const pipes=[];let frame=0,score=0,alive=true;
 let best=parseInt(localStorage.getItem("flappyBest")||"0",10);
-function addPipe(){pipes.push({x:canvas.width,gapY:100+Math.random()*200,gap:120,passed:false});}
+function addPipe(){pipes.push({x:canvas.width,gapY:100+Math.random()*200,gap:130,passed:false});}
 function reset(){bird.y=150;bird.vy=0;pipes.length=0;frame=0;score=0;alive=true;document.getElementById("score").textContent=0;}
 function update(){
   if(!alive) return;
