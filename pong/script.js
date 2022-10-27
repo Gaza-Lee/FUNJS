@@ -1,8 +1,8 @@
 const canvas=document.getElementById("game");
 const ctx=canvas.getContext("2d");
-const paddleH=90,paddleW=10;
+const paddleH=80,paddleW=10;
 let py=canvas.height/2-paddleH/2, cy=py;
-let bx=canvas.width/2, by=canvas.height/2, vx=4.5, vy=3.5;
+let bx=canvas.width/2, by=canvas.height/2, vx=4, vy=3;
 let ps=0, cs=0;
 
 function draw(){
@@ -21,7 +21,7 @@ function update(){
   if(bx>canvas.width){ ps++; reset(); }
   if(cy+40 < by) cy+=3; else if(cy+40>by) cy-=3;
 }
-function reset(){ if(ps>=5||cs>=5){ alert((ps>=5?"Player":"CPU")+" wins!"); ps=0; cs=0; } bx=canvas.width/2; by=canvas.height/2; vx=(Math.random()>0.5?4:-4); vy=3; document.getElementById("p").textContent=ps; document.getElementById("c").textContent=cs; }
+function reset(){ bx=canvas.width/2; by=canvas.height/2; vx=(Math.random()>0.5?4:-4); vy=3; document.getElementById("p").textContent=ps; document.getElementById("c").textContent=cs; }
 canvas.addEventListener("mousemove",e=>{ const r=canvas.getBoundingClientRect(); py=e.clientY-r.top-paddleH/2; if(py<0)py=0; if(py>canvas.height-paddleH)py=canvas.height-paddleH; });
 setInterval(()=>{ update(); draw(); },1000/60);
 draw();
