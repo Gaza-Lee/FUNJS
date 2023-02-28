@@ -3,7 +3,7 @@ const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;canvas.height=window.innerHeight;
 const particles=[];
 function boom(x,y){
-  for(let i=0;i<80;i++){
+  for(let i=0;i<100;i++){
     const a=Math.random()*Math.PI*2;const s=Math.random()*5+2;
     particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:60,color:`hsl(${Math.random()*360},100%,60%)`});
   }
