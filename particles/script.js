@@ -12,7 +12,7 @@ function update(){
     if(p.x<0||p.x>canvas.width)p.vx*=-1;
     if(p.y<0||p.y>canvas.height)p.vy*=-1;
     const dx=mouse.x-p.x,dy=mouse.y-p.y;const d=Math.hypot(dx,dy);
-    if(d<120){p.vx+=dx/d*0.05;p.vy+=dy/d*0.05;}
+    if(d<140){p.vx+=dx/d*0.05;p.vy+=dy/d*0.05;}
     ctx.fillStyle="#00bcd4";ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
   });
   requestAnimationFrame(update);
