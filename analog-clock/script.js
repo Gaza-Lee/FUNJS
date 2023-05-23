@@ -1,6 +1,6 @@
 const canvas=document.getElementById("c");
 const ctx=canvas.getContext("2d");
-const cx=canvas.width/2,cy=canvas.height/2,r=130;
+const cx=canvas.width/2,cy=canvas.height/2,r=125;
 function draw(){
   const now=new Date();
   const s=now.getSeconds(),m=now.getMinutes(),h=now.getHours()%12;
