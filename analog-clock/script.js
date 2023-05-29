@@ -9,7 +9,7 @@ function draw(){
   ctx.fillStyle="#333";ctx.font="16px sans-serif";ctx.textAlign="center";ctx.textBaseline="middle";
   for(let i=1;i<=12;i++){const a=i*Math.PI/6-Math.PI/2;ctx.fillText(i,cx+Math.cos(a)*(r-25),cy+Math.sin(a)*(r-25));}
   function hand(angle,length,width,color){ctx.beginPath();ctx.lineWidth=width;ctx.lineCap="round";ctx.strokeStyle=color;ctx.moveTo(cx,cy);ctx.lineTo(cx+Math.cos(angle)*length,cy+Math.sin(angle)*length);ctx.stroke();}
-  hand((h+m/60)*Math.PI/6-Math.PI/2,60,6,"#333");
+  hand((h+m/60)*Math.PI/6-Math.PI/2,55,6,"#333");
   hand(m*Math.PI/30-Math.PI/2,90,4,"#333");
   hand(s*Math.PI/30-Math.PI/2,100,2,"#e74c3c");
   ctx.beginPath();ctx.arc(cx,cy,6,0,Math.PI*2);ctx.fillStyle="#333";ctx.fill();
