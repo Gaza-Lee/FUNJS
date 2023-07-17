@@ -2,6 +2,7 @@ const qs=[
  {q:"What is 2+2?",a:["3","4","5"],c:1},
  {q:"Capital of France?",a:["London","Berlin","Paris"],c:2},
  {q:"JS stands for?",a:["JavaSource","JavaScript","JustScript"],c:1},
+ {q:"HTML stands for?",a:["Hyper Text Markup Language","High Text Markup Language","Hyper Tabular Markup Language"],c:0},
 ];
 let i=0,score=0;
 const quiz=document.getElementById("quiz");
