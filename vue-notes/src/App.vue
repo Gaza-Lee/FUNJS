@@ -29,7 +29,7 @@ function remove(id) {
 </template>
 
 <style scoped>
-.app { max-width: 420px; margin: 40px auto; font-family: sans-serif; }
+.app { max-width: 480px; margin: 40px auto; font-family: sans-serif; }
 h1 { text-align: center; }
 form { display: flex; gap: 8px; margin-bottom: 12px; }
 input { flex: 1; padding: 8px; }
