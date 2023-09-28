@@ -9,7 +9,7 @@ function draw(){
   ctx.fillStyle="#0b3d2e"; ctx.fillRect(0,0,canvas.width,canvas.height);
   ctx.fillStyle="#fff";
   ctx.fillRect(10,py,paddleW,paddleH);
-  ctx.fillRect(canvas.width-20,cy,paddleW,paddleH);
+  ctx.fillRect(canvas.width-22,cy,paddleW,paddleH);
   ctx.beginPath(); ctx.arc(bx,by,8,0,Math.PI*2); ctx.fill();
 }
 function update(){
