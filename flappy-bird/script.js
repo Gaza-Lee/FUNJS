@@ -1,5 +1,5 @@
 const canvas=document.getElementById("game"),ctx=canvas.getContext("2d");
-const bird={x:50,y:150,r:12,vy:0};
+const bird={x:60,y:150,r:12,vy:0};
 const gravity=0.5,jump=-8;
 const pipes=[];let frame=0,score=0,alive=true;
 function addPipe(){pipes.push({x:canvas.width,gapY:100+Math.random()*200,gap:120,passed:false});}
