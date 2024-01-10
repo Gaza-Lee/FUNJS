@@ -1,5 +1,5 @@
 const board=document.getElementById("board");
-const size=10,mines=10;
+const size=10,mines=12;
 let grid=[],revealed=0,total=size*size-mines;
 function init(){
   grid=Array.from({length:size},()=>Array(size).fill(0));
