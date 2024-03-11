@@ -14,7 +14,7 @@ function update(){
   for(let i=particles.length-1;i>=0;i--){
     const p=particles[i];p.x+=p.vx;p.y+=p.vy;p.vy+=0.08;p.life--;
     ctx.fillStyle=p.color;ctx.globalAlpha=p.life/60;
-    ctx.beginPath();ctx.arc(p.x,p.y,2,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.arc(p.x,p.y,2.5,0,Math.PI*2);ctx.fill();
     if(p.life<=0)particles.splice(i,1);
   }
   ctx.globalAlpha=1;
