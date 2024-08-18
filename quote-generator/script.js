@@ -1,0 +1,1 @@
+const quotes=["Keep it simple.","Code is poetry.","Ship it.","Learn something new.","Make it work, then make it fast."];let i=0;function next(){document.getElementById("q").textContent=quotes[i];i=(i+1)%quotes.length;}next();
