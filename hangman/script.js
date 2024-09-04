@@ -1,6 +1,6 @@
 const words=["javascript","hangman","programming","developer","keyboard","browser","function","variable"];
 const word=words[Math.floor(Math.random()*words.length)];
-let guessed=Array(word.length).fill("_"),wrong=0,maxWrong=6;
+let guessed=Array(word.length).fill("_"),wrong=0,maxWrong=7;
 const wordEl=document.getElementById("word");
 const lettersEl=document.getElementById("letters");
 const wrongEl=document.getElementById("wrong");
