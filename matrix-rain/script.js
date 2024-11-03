@@ -2,7 +2,7 @@ const canvas=document.getElementById("c");
 const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;canvas.height=window.innerHeight;
 const chars="アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789";
-const fontSize=15;
+const fontSize=14;
 const columns=Math.floor(canvas.width/fontSize);
 const drops=Array(columns).fill(1);
 function draw(){
