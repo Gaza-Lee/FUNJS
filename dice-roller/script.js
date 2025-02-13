@@ -1,1 +1,1 @@
-function roll(){document.getElementById("die").textContent=Math.floor(Math.random()*6)+1;}
+function roll(){document.getElementById("die").textContent=1+Math.floor(Math.random()*6);}
